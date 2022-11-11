@@ -2,8 +2,11 @@ from aiohttp import web
 from app.settings import config, BASE_DIR
 from app.database.accessor import PostgresAccessor
 
-
+# TODO: используй докстринги в методах и функциях, здесь пример
 def setup_config(application):
+    """
+    Получаем конфигурацию приложения
+    """
     application["config"] = config
 
 
