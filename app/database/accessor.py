@@ -1,15 +1,14 @@
 from aiohttp import web
+from app.routes.models import Users
 
 
 # подключени и отключение от базы
 class PostgresAccessor:
-    def __init__(self) -> None:
-        from app.routes.models import Users
-
+    def __init__(self):
         self.message = Users
         self.db = None
 
-    def setup(self, application: web.Application) -> None:
+    def setup(self, application: web.Application):
         application.on_startup.append(self._on_connect)
         application.on_cleanup.append(self._on_disconnect)
 
@@ -20,6 +19,6 @@ class PostgresAccessor:
         await  db.se_bind(self.config["database_url"])
         self.db = db
 
-    async def _on_disconnect(self, _) -> None:
+    async def _on_disconnect(self, _):
         if self.db is not None:
-            await  self.db.pop_bind().close()
+            await self.db.pop_bind().close()

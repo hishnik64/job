@@ -20,7 +20,6 @@ def setup_accessors(application):
 def setup_app(application):
     setup_config(application)
     setup_accessors(application)
-    setup_external_libraries(application)
     setup_routes(application)
 
 

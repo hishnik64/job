@@ -1,8 +1,5 @@
 import datetime
-
-import aiohttp
 from aiohttp import web
-# создаем функцию, которая будет отдавать html-файл
 from app.routes.models import Users
 
 async def index(request):

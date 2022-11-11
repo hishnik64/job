@@ -7,8 +7,7 @@ config_path = BASE_DIR / "config" / "config.yaml"
 
 def get_config(path):
     with open(path) as conf:
-        parsed_config = yaml.safe_load(conf)
-        return parsed_config
+        return yaml.safe_load(conf)
 
 
 config = get_config(config_path)

@@ -1,5 +1,5 @@
 con:
   port: 8080
 postgres:
-  database_url: postgresql+psycopg2://postgres:161322@localhost/Employees
+  database_url: postgres://hishnik:161322@localhost/forum
   require_ssl: false #шифровка соединения
